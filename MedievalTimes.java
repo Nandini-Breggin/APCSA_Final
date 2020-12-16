@@ -222,9 +222,9 @@ public class MedievalTimes {
                 if (selection == 3) {
                     System.out.println("Enter the FileName to replace : \n");
                     String replaceFile = userScan.nextLine();
-                    System.out.println("Enter the Orig Name to replace : \n");
+                    System.out.println("Enter the Orig Character Name to replace : \n");
                     String origName = userScan.nextLine();
-                    System.out.println("Enter the Name to replace with (if no, enter original name) : \n");
+                    System.out.println("Enter the new Character Name to randomize with (if not, enter original name) : \n");
                     String replaceName = userScan.nextLine();
                     // replaceSelected(origName, replaceName, replaceFile);
                     replaceLine(replaceFile,origName,replaceName);

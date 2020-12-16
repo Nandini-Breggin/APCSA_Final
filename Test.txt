@@ -1,10 +1,10 @@
 Your selection number is : 1
-Name of the game : Testing
-Logan,Peasant,Strength is  : 1  Toughness is: 7 Intelligence is: 2 Magic is: 1 Influence is: 4
+Name of the game : Hi 
+Nandini,Knight,Strength is  : 7  Toughness is: 5 Intelligence is: 4 Magic is: 1 Influence is: 1
 
-Joe,Peasant,Strength is  : 0  Toughness is: 8 Intelligence is: 3 Magic is: 5 Influence is: 2
+Lolo,Peasant,Strength is  : 1  Toughness is: 9 Intelligence is: 3 Magic is: 3 Influence is: 4
 
-Lee 2.0,Mage,Strength is  : 1  Toughness is: 2 Intelligence is: 1 Magic is: 9 Influence is: 0
+Phil,Cleric,Strength is  : 3  Toughness is: 4 Intelligence is: 8 Magic is: 1 Influence is: 4
 
-Balu,Knight,Strength is  : 10  Toughness is: 5 Intelligence is: 2 Magic is: 1 Influence is: 1
+Jorge,Mage,Strength is  : 4  Toughness is: 2 Intelligence is: 3 Magic is: 10 Influence is: 3
 
