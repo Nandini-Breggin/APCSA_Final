@@ -178,10 +178,37 @@ public class MedievalTimes {
                 // 2. File Validation/ Save File
 
                 if (selection == 2) {
-                    System.out.println("Enter the name of the file you would like to validate: ");
+                    System.out.println("Enter name of file you'd like to check");
                     String fileName = userScan.nextLine();
+                    file = new File(fileName);
+                    fileScan = new Scanner(file);
+                    
+                    int errorCount = 0;
+                    
+                    System.out.println("\n");
+                    fileScan.nextLine();
+                    while (fileScan.hasNextLine()){
+                        ArrayList<String> charInfo = new ArrayList<String>();
+                        String current = fileScan.nextLine();
+                        System.out.println(current);
 
-                    System.out.println(fileName + " has been validated."); // everything was hardcoded to fit the requirement
+                        for (String word : current.split(",")){
+                            charInfo.add(word);
+                        }
+
+                        if(!characterScore(charInfo)) {
+                            errorCount--;
+                        }
+                        // System.out.println("Errors: " + errorCount);
+                    }
+                    if (errorCount > 0){
+                        System.out.println("\nYour file is not valid. Please try again.");
+                    } else {
+                        System.out.println("\nCongrats! Your file is valid.");
+                    }
+                    
+
+                    // System.out.println(fileName + " has been validated."); // everything was hardcoded to fit the requirement
                    
                     
                     Menu();
@@ -197,10 +224,12 @@ public class MedievalTimes {
                     String replaceFile = userScan.nextLine();
                     System.out.println("Enter the Orig Name to replace : \n");
                     String origName = userScan.nextLine();
-                    System.out.println("Enter the Name to replace : \n");
+                    System.out.println("Enter the Name to replace with (if no, enter original name) : \n");
                     String replaceName = userScan.nextLine();
                     // replaceSelected(origName, replaceName, replaceFile);
                     replaceLine(replaceFile,origName,replaceName);
+
+                    System.out.println("The character chosen has been randomized successfully!");
 
               
                     Menu();

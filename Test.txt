@@ -1,10 +1,10 @@
 Your selection number is : 1
-Name of the game : Test Gamer
-Ram,Knight,Strength is  : 10  Toughness is: 2 Intelligence is: 5 Magic is: 4 Influence is: 1
+Name of the game : Testing
+Logan,Peasant,Strength is  : 1  Toughness is: 7 Intelligence is: 2 Magic is: 1 Influence is: 4
 
-Tim,Mage,Strength is  : 1  Toughness is: 2 Intelligence is: 1 Magic is: 8 Influence is: 5
+Joe,Peasant,Strength is  : 0  Toughness is: 8 Intelligence is: 3 Magic is: 5 Influence is: 2
 
-Dan,Knight,Strength is  : 7  Toughness is: 4 Intelligence is: 2 Magic is: 4 Influence is: 4
+Lee 2.0,Mage,Strength is  : 1  Toughness is: 2 Intelligence is: 1 Magic is: 9 Influence is: 0
 
-Randy,Cleric,Strength is  : 0  Toughness is: 5 Intelligence is: 10 Magic is: 2 Influence is: 0
+Balu,Knight,Strength is  : 10  Toughness is: 5 Intelligence is: 2 Magic is: 1 Influence is: 1
 
