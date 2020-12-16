@@ -79,11 +79,15 @@ public class Character {
         return this.influence;
     }
 
-    public String toString() {
-        return this.type + "," + String.valueOf(this.strength) + "," + String.valueOf(this.tough) + "," + String.valueOf(this.intelligence) + "," + String.valueOf(this.magic) + "," + String.valueOf(this.influence);
+    public String getAll()
+    {
+        String value = new String();
+        value = "Strength is  : " + String.valueOf(this.getStrength()) + "  Toughness is: " + String.valueOf(this.getTough()) + " Intelligence is: " + String.valueOf(this.getIntelligence()) + " Magic is: " + String.valueOf(this.getMagic() + " Influence is: " + String.valueOf(this.getInfluence()) + "\n");
+        return value;
     }
+    
 
-
+  
 
 }
 
