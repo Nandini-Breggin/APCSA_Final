@@ -1,8 +1,10 @@
 Your selection number is : 1
 Name of the game : Test Gamer
-Lola,Knight,Strength is  : 9  Toughness is: 4 Intelligence is: 5 Magic is: 0 Influence is: 2
+Ram,Knight,Strength is  : 10  Toughness is: 2 Intelligence is: 5 Magic is: 4 Influence is: 1
 
-Lulu,Cleric,Strength is  : 3  Toughness is: 0 Intelligence is: 8 Magic is: 3 Influence is: 2
+Tim,Mage,Strength is  : 1  Toughness is: 2 Intelligence is: 1 Magic is: 8 Influence is: 5
 
-Dan,Mage,Strength is  : 5  Toughness is: 4 Intelligence is: 1 Magic is: 10 Influence is: 5
+Dan,Knight,Strength is  : 7  Toughness is: 4 Intelligence is: 2 Magic is: 4 Influence is: 4
+
+Randy,Cleric,Strength is  : 0  Toughness is: 5 Intelligence is: 10 Magic is: 2 Influence is: 0
 

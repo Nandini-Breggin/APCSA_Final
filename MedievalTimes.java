@@ -155,7 +155,6 @@ public class MedievalTimes {
                     }
 
 
-
                     pw.close();
 
 
@@ -169,7 +168,7 @@ public class MedievalTimes {
                     System.out.println("Enter the Name to replace : \n");
                     String replaceName = userScan.nextLine();
                     // replaceSelected(origName, replaceName, replaceFile);
-                    replaceLine(replaceFile,origName);
+                    replaceLine(replaceFile,origName,replaceName);
                 }
                       
 
@@ -194,19 +193,16 @@ public class MedievalTimes {
                 // 3. Reroll/Randomize an existing character
 
                 if (selection == 3) {
-                    System.out.println("Enter the name of the file saved: ");
-                    String fileName = userScan.nextLine();
+                    System.out.println("Enter the FileName to replace : \n");
+                    String replaceFile = userScan.nextLine();
+                    System.out.println("Enter the Orig Name to replace : \n");
+                    String origName = userScan.nextLine();
+                    System.out.println("Enter the Name to replace : \n");
+                    String replaceName = userScan.nextLine();
+                    // replaceSelected(origName, replaceName, replaceFile);
+                    replaceLine(replaceFile,origName,replaceName);
 
-                    file = new File(fileName);
-                    fileScan = new Scanner(file);
-
-                    // randomizer
-                    Random rand = new Random();
-
-                    // replaceSelected("kal","lola", fileName);
-
-
-
+              
                     Menu();
                     selection = Integer.parseInt(userScan.nextLine());
 
@@ -278,11 +274,15 @@ public class MedievalTimes {
 
     } 
 
-    public static void replaceLine(String fileName, String name )
+    public static void replaceLine(String fileName, String name , String replaceName)
     {
 
        
         try{ 
+            File tempFile = new File(fileName);
+            boolean exists = tempFile.exists();
+            if(exists)
+            {
             BufferedReader file = new BufferedReader(new FileReader(fileName)); // holds file, won't close it
             StringBuffer inputBuffer = new StringBuffer();
             String line;
@@ -290,94 +290,65 @@ public class MedievalTimes {
             while ((line = file.readLine()) != null) {
                 
                 String row = line;
-                int iend = row.indexOf(",");
+              
                 String firstpart ="";
                 String charpart ="";
-                String restStr;
+                String restStr ="";
 
-                String segments[] = row.split(",");
-                firstpart = segments[0];
-                charpart = segments[1];
-                restStr = segments[2];
 
-                System.out.println("kal parts : " + firstpart + "  " +charpart  + "    "+ restStr);
-
+                String[] strarray = row.split(",");
+                if(strarray.length > 1)
+                {
+                    firstpart = strarray[0];
+                    charpart = strarray[1];
+                }
                 
-
                 if(firstpart.equals(name))
                 {
+               
                     Character character = new Character(charpart);
                     String randomStr = character.getAll();
-                    inputBuffer.append(name+","+ charpart + "," + randomStr);
+                    
+                    String appendStr = replaceName+","+charpart+","+randomStr;
+    
+                   
+                    inputBuffer.append(appendStr);
+                   
+                    
                 }
                 else
                 {
-                    
+      
                     inputBuffer.append(line);
+                    inputBuffer.append('\n');
                 }
                 
-                inputBuffer.append('\n');
+               
             }
-
-            // (example.substring(example.lastIndexOf(" ") - 1)); // keep subtracting and adding the randomizer since the amount of places is the same
-
             file.close();
 
             String inputStr = inputBuffer.toString();
     
             System.out.println(inputStr);
 
-         FileOutputStream fileOut = new FileOutputStream(fileName);
+            FileOutputStream fileOut = new FileOutputStream(fileName);
             fileOut.write(inputStr.getBytes());
             fileOut.close();
+            
+        }
+        else
+        {
+            System.out.println("File doesnot exists : " + fileName);
+        }
+        
 
 
 
         } catch (Exception e) {
-            System.out.println("exeption");
+            System.out.println("Exception : " + e.getMessage());
         }
         
     }
 
-    public static void replaceSelected(String replaceWith, String name, String fileName) {
-        try {
-            // input the file content to the StringBuffer "input"
-            BufferedReader file = new BufferedReader(new FileReader(fileName));
-            StringBuffer inputBuffer = new StringBuffer();
-            String line;
-
-            // System.out.println("Enter the origninal name: ");
-            // String origName = userScan.nextLine();
     
-            while ((line = file.readLine()) != null) {
-                inputBuffer.append(line);
-                inputBuffer.append('\n');
-            }
-
-            file.close();
-            String inputStr = inputBuffer.toString();
-    
-            System.out.println(inputStr); // display the original file for debugging
-    
-            // logic to replace lines in the string (could use regex here to be generic)
-            // if (type.equals("0")) {
-            //     inputStr = inputStr.replace(replaceWith + "1", replaceWith + "0"); 
-            // } else if (type.equals("1")) {
-            //     inputStr = inputStr.replace(replaceWith + "0", replaceWith + "1");
-            // }
-
-
-    
-            // // display the new file for debugging
-            // System.out.println("----------------------------------\n" + inputStr);
-    
-            // // write the new string with the replaced line OVER the same file
-            // FileOutputStream fileOut = new FileOutputStream("notes.txt");
-            // fileOut.write(inputStr.getBytes());
-            // fileOut.close();
-    
-        } catch (Exception e) {
-            System.out.println("Problem reading the file.");
-        }
-    }
 }
